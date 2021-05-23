@@ -13,7 +13,7 @@ app.post('/events', (req, res) => {
 
   // Post service
   axios
-    .post('http://localhost:4000/events', event)
+    .post('http://posts-clusterip-svc:4000/events', event)
     .catch((err) => console.error(err.message));
 
   // Comment service
