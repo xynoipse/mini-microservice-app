@@ -18,17 +18,17 @@ app.post('/events', (req, res) => {
 
   // Comment service
   axios
-    .post('http://localhost:4001/events', event)
+    .post('http://comments-svc:4001/events', event)
     .catch((err) => console.error(err.message));
 
   // Query service
   axios
-    .post('http://localhost:4002/events', event)
+    .post('http://query-svc:4002/events', event)
     .catch((err) => console.error(err.message));
 
   // Moderation service
   axios
-    .post('http://localhost:4003/events', event)
+    .post('http://moderation-svc:4003/events', event)
     .catch((err) => console.error(err.message));
 
   res.json({ status: 'OK' });

@@ -14,7 +14,7 @@ app.post('/events', (req, res) => {
 
     const { id, content, postId } = data;
 
-    axios.post('http://localhost:4005/events', {
+    axios.post('http://event-bus-svc:4005/events', {
       type: 'CommentModerated',
       data: {
         id,
