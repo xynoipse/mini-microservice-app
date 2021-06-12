@@ -7,7 +7,7 @@ const PostCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post('http://api.microservice.test/posts', { title });
+    await axios.post('http://api.microservice.test/posts/create', { title });
 
     setTitle('');
   };
