@@ -7,7 +7,7 @@ const CommentCreate = ({ postId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
+    await axios.post(`http://api.microservice.test/posts/${postId}/comments`, {
       content,
     });
 

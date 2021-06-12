@@ -2,6 +2,8 @@ FROM node:alpine
 
 WORKDIR /usr/src/app
 
+ENV CI=true
+
 # Install deps
 RUN npm install -g serve
 COPY package.json yarn.lock ./
