@@ -1,0 +1,36 @@
+apiVersion: skaffold/v2beta17
+kind: Config
+metadata:
+  name: mini-microservice-app
+build:
+  local:
+    push: false
+  artifacts:
+    - image: xynoipse/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+    - image: xynoipse/comments
+      context: comments
+      docker:
+        dockerfile: Dockerfile
+    - image: xynoipse/event-bus
+      context: event-bus
+      docker:
+        dockerfile: Dockerfile
+    - image: xynoipse/moderation
+      context: moderation
+      docker:
+        dockerfile: Dockerfile
+    - image: xynoipse/posts
+      context: posts
+      docker:
+        dockerfile: Dockerfile
+    - image: xynoipse/query
+      context: query
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - infra/k8s/*
